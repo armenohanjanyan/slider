@@ -1,0 +1,4 @@
+<div class="mySlides active">
+  <iframe width="100%" height="500px" [src]="sanitizer.bypassSecurityTrustResourceUrl(clip.url)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="text"><p>Artist: {{ clip.artist }}</p><p>Song: {{ clip.song }}</p></div>
+</div>

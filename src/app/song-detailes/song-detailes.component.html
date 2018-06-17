@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <form class="form-control" #f="ngForm">
+      <h3>Add a Music Video</h3>
+      <input type="text"
+             placeholder="Enter url"
+             id="url"
+             [(ngModel)]="clip.url"
+             required
+             #url="ngModel"
+             class="form-control"
+             name="url">
+      <p *ngIf="url.invalid && url.touched" class="validation-error">This field is required</p>
+      <input type="text"
+             [(ngModel)]="clip.artist"
+             placeholder="Enter artist"
+             id="artist"
+             class="form-control"
+             required
+             #artist="ngModel"
+             name="artist">
+      <p *ngIf="artist.invalid && artist.touched"  class="validation-error">This field is required</p>
+      <input type="text"
+             placeholder="Enter song title"
+             id="song"
+             [(ngModel)]="clip.song"
+             required
+             #song="ngModel"
+             class="form-control"
+             name="song">
+      <p *ngIf="song.invalid && song.touched"  class="validation-error">This field is required</p>
+      <button class="btn btn-primary"
+              [disabled]="f.invalid"
+              (click)="enterSong(clip)">Submit</button>
+    </form>
+  </div>
+</div>

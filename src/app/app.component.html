@@ -1,0 +1,17 @@
+
+<div class="slideshow-container">
+  <app-clip *ngIf="clip" [clip]="clip"></app-clip>
+  <a class="prev" (click)="changeSlide(-1)">&#10094;</a>
+  <a class="next" (click)="changeSlide(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center" *ngIf="clips.length">
+  <span *ngFor="let i of clips; let ind = index"
+        class="dot"
+        [ngClass]="{'active': clips[ind].url === clip.url}"
+        (click)="selectSong(ind)">
+  </span>
+</div>
+<app-song-detailes></app-song-detailes>
